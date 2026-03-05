@@ -1,43 +1,71 @@
 ReGraphik - Gestão de Estoque Reverso
+
 Sistema de gestão e automação focado em sustentabilidade e eficiência operacional para o setor gráfico.
 
-O Desafio (Demanda)
-Atualmente, empresas do setor gráfico geram resíduos diários como papel, cartões e vinil que são descartados, gerando custos e impacto ambiental. O desafio do projeto é desenvolver um processo tecnicamente viável e economicamente acessível para coleta, triagem e reaproveitamento desses resíduos.
+ O Desafio (Demanda)
 
-Nossa Solução (Proposta de Valor)
-O software ReGraphik transforma o que hoje é descartado em valor através de:
+Atualmente, empresas do setor gráfico geram resíduos diários como papel, cartões e vinil que são descartados, gerando custos e alto impacto ambiental. O desafio central deste projeto é desenvolver um processo técnico viável e economicamente acessível para a coleta, triagem e reaproveitamento desses resíduos.
 
-Gestão de Estoque Reverso: Organização de resíduos dentro das próprias gráficas.
-Economia Circular: Transformação de resíduos em matéria-prima para personalização de produtos (camisetas, canecas e brindes).
-Redução de Desperdícios: Algoritmos de sugestão para reaproveitamento inteligente.
-Documentação de Criação do Sistema
-Os detalhes da estrutura de dados podem ser encontrados nas pastas:
+ Nossa Solução (Proposta de Valor)
 
-MiniMundo: Descrição do fluxo de negócio.
-Modelo Conceitual: Diagrama de alto nível.
-Modelo Lógico: Estrutura técnica das tabelas.
-Tecnologias e Arquitetura
-Linguagem: C#
+O software ReGraphik transforma o que hoje é descartado em valor através de três pilares:
+
+Gestão de Estoque Reverso: Organização inteligente de resíduos dentro de gráficas próprias.
+
+Economia Circular: Transformação de resíduos em matéria-prima para a personalização de novos produtos (camisetas, canecas e brindes).
+
+Redução de Desperdícios: Algoritmos de sugestão para reaproveitamento inteligente de materiais.
+
+ Arquitetura de Software e Tecnologias
+
+O projeto segue rigorosamente o padrão MVVM (Model-View-ViewModel), garantindo a separação entre a interface (XAML) e a lógica de negócio (C#). Esta estrutura facilita a manutenção, a escalabilidade e a realização de testes unitários.
+
+Linguagem: C# (.NET)
 
 Interface: WPF (Windows Presentation Foundation)
 
-Padrão de Projeto: MVVM (Model-View-ViewModel)
+Padrão de Projeto: MVVM
 
-Persistência: Banco de Dados Relacional (SQL)
+Persistência: Banco de Dados Relacional (SQL Server)
 
-Funcionalidades em Destaque
- Cadastro e Triagem de Resíduos (Papel, Vinil, Cartão)
- Controle de Estoque de Matéria-Prima Reutilizável
- Sustentabilidade e Economia Circular
- Gestão de Pedidos de Produtos Personalizados
-Arquitetura de Software
-O projeto segue o padrão MVVM, garantindo a separação entre a interface (XAML) e a lógica de negócio (C#), facilitando a manutenção e a realização de testes unitários.
+ Funcionalidades em Destaque
 
-Integrantes do Grupo
+ Cadastro e Triagem: Identificação precisa de resíduos (Papel, Vinil, Cartão).
+
+ Controle de Estoque: Gestão total de matéria-prima reutilizável.
+
+ Economia Circular: Módulo focado na transformação sustentável.
+
+ Gestão de Pedidos: Controle de produção para itens personalizados.
+
+ Documentação do Sistema
+
+A estrutura de dados e o planejamento técnico podem ser consultados diretamente nas pastas do repositório:
+
+MiniMundo: Descrição detalhada do fluxo de negócio.
+
+Modelo Conceitual: Diagrama de alto nível das entidades.
+
+Modelo Lógico: Estrutura técnica e relações das tabelas.
+
+Script SQL: Código de criação da base de dados.
+
+ Integrantes do Grupo
+
 Lucas Aquino Guedes
+
 Otavio Henrique Barbosa Soares
+
 Bruno Maia Santos
-📞 Contato
+
+ Contato e Redes Sociais
+
+Estamos abertos a feedbacks e parcerias:
+
 Instagram: @regraphik.oficial
+
 E-mail: contato@regraphik.com
+
 WhatsApp: (31) 3541-5622
+
+Projeto desenvolvido para o Trabalho de Conclusão de Curso (TCC) - Análise e Desenvolvimento de Sistemas.
