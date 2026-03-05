@@ -36,10 +36,12 @@ O projeto segue rigorosamente o padrão **MVVM (Model-View-ViewModel)**, garanti
 
 A estrutura de dados e o planejamento técnico podem ser consultados diretamente nas pastas do repositório:
 
-* [**MiniMundo**](./banco%20de%20dados/Modelagem/MiniMundo%20Demanda.pdf): Descrição detalhada do fluxo de negócio.
-* [**Modelo Conceitual**](./banco%20de%20dados/Modelagem/Modelo%20Conceitual.pdf): Diagrama de alto nível das entidades.
-* [**Modelo Lógico**](./banco%20de%20dados/Modelagem/Modelo%20Lógico.pdf): Estrutura técnica e relações das tabelas.
-* [**Script SQL**](./banco%20de%20dados/banco/script_criacao.sql): Código de criação da base de dados.
+*  [**MiniMundo e Demanda**](./Modelagem/MiniMundo%20Demanda.pdf)
+*  [**Modelo Conceitual**](./Modelagem/Modelo%20Conceitual.pdf)
+*  [**Modelo Lógico**](./Modelagem/Modelo%20Lógico.pdf)
+*  [**Modelo Físico (Docs)**](./Modelagem/MODELO%20FÍSICO.pdf)
+*  [**Script SQL de Criação**](./Banco%20de%20Dados/script_criacao.sql)
+*  [**Slides da Apresentação**](./Slides%20ReGraphik.pptx)
 
 ##  Integrantes do Grupo
 
