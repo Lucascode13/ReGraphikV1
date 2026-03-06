@@ -42,7 +42,7 @@ A estrutura de dados e o planejamento técnico podem ser consultados diretamente
 *  [**Modelo Físico (Docs)**](./Modelagem/MODELO%20FÍSICO.pdf)
 *  [**Script/Base de Dados**](./Banco%20de%20Dados/Banco/regraphik.db)
 *  [**Apresentação Completa (PPTX - Com Vídeo)**](./Slides%20ReGraphik.pptx)
-*  [**Slides da Apresentação (PDF - Visualização Rápida)**](./Slides%20ReGraphik.pdf)
+*  [**Slides (PDF - Visualização Rápida)**](./ReGraphik.pdf)
 
 ##  Integrantes do Grupo
 
