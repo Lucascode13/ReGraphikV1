@@ -1,8 +1,7 @@
 using System;
 using System.Windows;
 using RegraphikApp.Commands;
-using RegraphikApp.Data;
-using RegraphikApp.Models;
+using RegraphikApp.Data; 
 
 namespace RegraphikApp.ViewModels;
 
@@ -40,12 +39,23 @@ public class LoginViewModel : BaseViewModel
 
     private void Entrar()
     {
-        var repo = new UsuarioRepository();
-        var usuario = repo.Autenticar(Login, Senha);
-
-        if (usuario != null)
+        // 1. Evita que o programa trave se o usuário clicar em Entrar sem digitar nada
+        if (string.IsNullOrWhiteSpace(Login) || string.IsNullOrWhiteSpace(Senha))
         {
-            MessageBox.Show($"Bem-vindo, {usuario.Nome}!");
+            MessageBox.Show("Por favor, preencha o login e a senha.");
+            return;
+        }
+
+        // 2. Chama o banco de dados
+        var repo = new UsuarioRepository();
+        
+        // 3. Verifica se o login é válido usando o método que criamos (retorna true ou false)
+        bool loginValido = repo.AutenticarUsuario(Login, Senha);
+
+        if (loginValido)
+        {
+            MessageBox.Show("Login realizado com sucesso! Bem-vindo.");
+            // O código para fechar a tela de login e abrir a tela principal vai entrar aqui depois
         }
         else
         {

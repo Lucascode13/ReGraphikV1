@@ -1,76 +1,65 @@
+using System;
+using System.Windows;
 using Microsoft.Data.Sqlite;
-using RegraphikApp.Models;
+using RegraphikApp.Data;
 
 namespace RegraphikApp.Data;
 
 public class UsuarioRepository
 {
-    public Usuario? Autenticar(string login, string senha)
+    // --- MÉTODO PARA CADASTRAR ---
+    public bool CadastrarUsuario(string nome, string cpf, string email, string login, string senha)
     {
-        using var conn = Database.GetConnection();
-        conn.Open();
-
-        var cmd = new SqliteCommand(
-            "SELECT * FROM CadastroUsuarios WHERE Login=@l AND Senha=@s",
-            conn);
-
-        cmd.Parameters.AddWithValue("@l", login);
-        cmd.Parameters.AddWithValue("@s", senha);
-
-        var reader = cmd.ExecuteReader();
-
-        if (reader.Read())
+        try
         {
-            return new Usuario
-            {
-                ID = reader.GetInt32(0),
-                Nome = reader.GetString(1),
-                Login = reader.GetString(4)
-            };
+            using var conn = Database.GetConnection();
+            conn.Open();
+
+            var cmd = conn.CreateCommand();
+            
+            // Adicionamos 'DataCadastro' e o valor 'datetime('now')' para satisfazer a regra do banco
+            cmd.CommandText = @"
+                INSERT INTO CadastroUsuarios (Nome, CPF, Email, Login, Senha, DataCadastro) 
+                VALUES (@nome, @cpf, @email, @login, @senha, datetime('now'));";
+
+            cmd.Parameters.AddWithValue("@nome", nome);
+            cmd.Parameters.AddWithValue("@cpf", cpf);
+            cmd.Parameters.AddWithValue("@email", email);
+            cmd.Parameters.AddWithValue("@login", login);
+            cmd.Parameters.AddWithValue("@senha", senha);
+
+            int linhasAfetadas = cmd.ExecuteNonQuery();
+            return linhasAfetadas > 0;
         }
-
-        return null;
+        catch (Exception ex)
+        {
+            // Mostra o erro real caso algo ainda dê errado
+            MessageBox.Show("ERRO AO CADASTRAR: " + ex.Message);
+            return false;
+        }
     }
 
-    // 🔵 NOVO MÉTODO
-    public void Inserir(Usuario usuario)
+    // --- MÉTODO PARA AUTENTICAR (LOGIN) ---
+    public bool AutenticarUsuario(string login, string senha)
     {
-        using var conn = Database.GetConnection();
-        conn.Open();
+        try
+        {
+            using var conn = Database.GetConnection();
+            conn.Open();
 
-        var cmd = conn.CreateCommand();
+            var cmd = conn.CreateCommand();
+            // Verifica se existe um usuário com este login e senha
+            cmd.CommandText = "SELECT COUNT(*) FROM CadastroUsuarios WHERE Login = @login AND Senha = @senha";
+            cmd.Parameters.AddWithValue("@login", login);
+            cmd.Parameters.AddWithValue("@senha", senha);
 
-        cmd.CommandText = @"
-            INSERT INTO CadastroUsuarios
-            (Nome, CPF, Email, Login, Senha, DataCadastro)
-            VALUES
-            (@Nome, @CPF, @Email, @Login, @Senha, @DataCadastro);
-        ";
-
-        cmd.Parameters.AddWithValue("@Nome", usuario.Nome);
-        cmd.Parameters.AddWithValue("@CPF", usuario.CPF);
-        cmd.Parameters.AddWithValue("@Email", usuario.Email);
-        cmd.Parameters.AddWithValue("@Login", usuario.Login);
-        cmd.Parameters.AddWithValue("@Senha", usuario.Senha);
-        cmd.Parameters.AddWithValue("@DataCadastro", 
-            usuario.DataCadastro.ToString("yyyy-MM-dd HH:mm:ss"));
-
-        cmd.ExecuteNonQuery();
-    }
-
-    // 🔵 NOVO MÉTODO
-    public bool ExisteLogin(string login)
-    {
-        using var conn = Database.GetConnection();
-        conn.Open();
-
-        var cmd = conn.CreateCommand();
-        cmd.CommandText =
-            "SELECT COUNT(*) FROM CadastroUsuarios WHERE Login = @Login;";
-        cmd.Parameters.AddWithValue("@Login", login);
-
-        var count = Convert.ToInt32(cmd.ExecuteScalar());
-
-        return count > 0;
+            long resultado = (long)cmd.ExecuteScalar();
+            return resultado > 0;
+        }
+        catch (Exception ex)
+        {
+            MessageBox.Show("ERRO AO AUTENTICAR: " + ex.Message);
+            return false;
+        }
     }
 }
