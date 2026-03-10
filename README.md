@@ -49,6 +49,8 @@ A estrutura de dados e o planejamento técnico podem ser consultados diretamente
 * **Lucas Aquino Guedes**
 * **Otavio Henrique Barbosa Soares**
 * **Bruno Maia Santos**
+* **Luna Beatriz Alves**
+* **Kaio Alves Gonzaga Silva**
 
 ##  Contato e Redes Sociais
 
