@@ -3,6 +3,13 @@
 > **Sistema de gestão e automação focado em sustentabilidade e eficiência operacional para o setor gráfico.**
 
 ---
+##  Integrantes do Grupo
+
+* **Lucas Aquino Guedes**
+* **Otavio Henrique Barbosa Soares**
+* **Bruno Maia Santos**
+* **Luna Beatriz Alves**
+* **Kaio Alves Gonzaga Silva**
 
 ##  O Desafio (Demanda)
 
@@ -44,13 +51,7 @@ A estrutura de dados e o planejamento técnico podem ser consultados diretamente
 *  [**Apresentação Completa (PPTX - Com Vídeo)**](./Slides%20ReGraphik.pptx)
 *  [**Slides (PDF - Visualização Rápida)**](./ReGraphik.pdf)
 
-##  Integrantes do Grupo
 
-* **Lucas Aquino Guedes**
-* **Otavio Henrique Barbosa Soares**
-* **Bruno Maia Santos**
-* **Luna Beatriz Alves**
-* **Kaio Alves Gonzaga Silva**
 
 ##  Contato e Redes Sociais
 
